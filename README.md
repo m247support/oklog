@@ -8,7 +8,7 @@ Modified from [lendico/oklog](https://hub.docker.com/r/lendico/oklog). All credi
 
 Tag, verson, base image, Dockerfile link
 
--	[`latest`, `v0.1.2`, `alpine:3.5` (*/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
+-	[`latest`, `v0.1.2`, `alpine:3.5` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
 -	[`v0.1.3`, `v0.1.3`, `alpine:3.5` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
 -	[`v0.1.2`, `v0.1.2`, `alpine:3.5` (*v0.1.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.2/Dockerfile)
 
@@ -28,6 +28,7 @@ docker run -d \
 	oklog/oklog:latest ingeststore -store.segment-replication-factor 1
 ```
 
+
 (To mount the data directory please use `-v /path/to/dir:/data \`).
 
 Integrations:
@@ -44,6 +45,7 @@ docker exec -it oklog /bin/ash
 ./oklog query -stats
 ./oklog query -from 2h -q "e"
 ```
+
 
 # Notes
 
