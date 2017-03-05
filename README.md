@@ -6,10 +6,10 @@
 
 Tag, version, base image, Dockerfile link:
 
+-	[`v0.2.0`, `v0.2.0`, `alpine:3.5` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
 -	[`latest`, `v0.1.3`, `alpine:3.5` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
 -	[`v0.1.3`, `v0.1.3`, `alpine:3.5` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
 -	[`v0.1.2`, `v0.1.2`, `alpine:3.5` (*v0.1.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.2/Dockerfile)
--	[`v0.2.0`, `v0.2.0`, `alpine:3.5` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
 
 (Note that the latest denotes the most recent stable release, not the most latest release of OK Log.)
 
