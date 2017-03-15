@@ -17,8 +17,6 @@ Tag, version, base image, Dockerfile link:
 
 ## Docker
 
-Quick start:
-
 Quickly create a store:
 
 ```
@@ -41,10 +39,20 @@ Quickly forward logs (requires a binary exectuable from the [releases](https://g
 
 (Since v0.1.3 (latest) you can use `-prefix <tag> -prefix <label>` repeatable flag to prepend annotations to logs.)
 
+### Integrations
 
-Integrations:
+Quickly forward docker daemon logs:
+
+```
+docker run -d \
+	--volume=/var/run/docker.sock:/var/run/docker.sock \
+	--name logspout \
+	gliderlabs/logspout syslog+tcp://localhost:7651
+```
 
 Please see [Integrations](https://github.com/oklog/oklog/wiki/Integrations) within the OK Log [wiki](https://github.com/oklog/oklog/wiki).
+
+### Query
 
 Quick query:
 
@@ -56,7 +64,7 @@ docker exec -it oklog /bin/ash
 ./oklog query -stats
 ./oklog query -from 2h -q "e"
 ```
-
+### Stream
 
 Quick stream:
 
@@ -84,6 +92,6 @@ Please see [PR #34](https://github.com/oklog/oklog/pull/34) for more information
 
 # Notes
 
-These are unofficial Docker builds for OK Log. All credits for OK Log should go to [peterbourgon](https://github.com/peterbourgon) and the OK Log contributors / maintainers.
+This represents a set of unofficial Dockerfiles and images containing the OK Log binary. All credits for OK Log should go to [peterbourgon](https://github.com/peterbourgon) and the OK Log contributors / maintainers.
 
-Any problems, suggestions or enhancements, please raise a new issue [here](https://github.com/m247suppport/oklog/issues/new). Alternatively, alterations or additions can be included in a new PR [here](https://github.com/m247suppport/oklog/pulls). All feedback welcome.
+Any problems with OK Log then please raise an issue [here](https://github.com/oklog/oklog/issues/new). Any suggestions or enhancements to do with the Dockerfiles or images, please raise a new issue [here](https://github.com/m247suppport/oklog/issues/new). Alternatively, alterations or additions can be included in a new PR [here](https://github.com/m247suppport/oklog/pulls). All feedback is welcome.
