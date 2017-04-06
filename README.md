@@ -18,7 +18,7 @@ Tag, version, base image, Dockerfile link:
 
 ## Docker
 
-Quickly create a store:
+Quickly create an ingeststore:
 
 ```
 docker run -d \
@@ -32,10 +32,14 @@ docker run -d \
 
 (To mount the data directory please use `-v /path/to/dir:/data`).
 
+Please see the OK Log [README.md](https://github.com/oklog/oklog/blob/master/README.md) for more advanced deployments.
+
+## Forward logs
+
 Quickly forward logs (requires a binary exectuable from the [releases](https://github.com/oklog/oklog/releases)):
 
 ```
-./myservice | oklog forward <ingeststore>
+tail -f /var/log/*.log | oklog forward <store/ingeststore>
 ```
 
 (Since v0.1.3 (latest) you can use `-prefix <tag> -prefix <label>` repeatable flag to prepend annotations to logs.)
@@ -48,7 +52,7 @@ Quickly forward docker daemon logs:
 docker run -d \
 	--volume=/var/run/docker.sock:/var/run/docker.sock \
 	--name logspout \
-	gliderlabs/logspout syslog+tcp://localhost:7651
+	gliderlabs/logspout syslog+tcp://<store/ingeststore>:7651
 ```
 
 Please see [Integrations](https://github.com/oklog/oklog/wiki/Integrations) within the OK Log [wiki](https://github.com/oklog/oklog/wiki).
@@ -59,42 +63,36 @@ Quick query:
 
 ```
 docker exec -it oklog /bin/ash
-```
-
-```
 ./oklog query -stats
 ./oklog query -from 2h -q "e"
 ```
 Or you can query a store with binary executable from [releases](https://github.com/oklog/oklog/releases): 
 ```
-oklog query -store <store> -from 1h -q "e"
+oklog query -store <store/ingeststore> -from 1h -q "e"
 ```
 
 ### Stream
 
-Quick stream:
-
-Since v0.2.0 (currently unstable) you can register a steamed query to OK Log process.
-
-Users can register a query via a long-lived HTTP/1.1 connection to an OK Log container running in store or injeststore modes, e.g.:
+Since v0.2.0 (unstable) you can register a steamed query via a long-lived HTTP/1.1 connection to an OK Log container running in store or injeststore modes:
 
 ```
-curl -iv <store>:7650/store/stream?q=e
+curl -iv <store/ingeststore>:7650/store/stream?q=e
 ```
 
-Alternatively, you can run a OK Log container in stream mode:
-
+Or you can stream with binary executable from [releases](https://github.com/oklog/oklog/releases): 
 
 ```
-docker run -d \
-	--name oklogstream \
-	oklog/oklog:v0.2.0 stream -store http://localhost:7650 -q "e"
+oklog stream -store <store/ingeststore>:7650 -from 1h -q "e"
 ```
 
-(Be careful of log looping when pumping logs from the Docker daemon, as this will burn through storage!)
+(A note on running an OK Log container in stream mode: Be careful of log looping when pumping logs from the Docker daemon on the same host, as this will burn through storage!)
 
 Please see [PR #34](https://github.com/oklog/oklog/pull/34) for more information.
 
+### UI
+
+
+Since v0.2.1 you can view a prototype web UI at `http://<store/injeststore>:7650/ui/`.
 
 # Notes
 
