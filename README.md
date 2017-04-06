@@ -6,6 +6,7 @@
 
 Tag, version, base image, Dockerfile link:
 
+-	[`v0.2.1`, `v0.2.1`, `alpine:3.5` (*v0.2.1/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.1/Dockerfile)
 -	[`v0.2.0`, `v0.2.0`, `alpine:3.5` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
 -	[`latest`, `v0.1.3`, `alpine:3.5` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
 -	[`v0.1.3`, `v0.1.3`, `alpine:3.5` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
@@ -64,6 +65,11 @@ docker exec -it oklog /bin/ash
 ./oklog query -stats
 ./oklog query -from 2h -q "e"
 ```
+Or you can query a store with binary executable from [releases](https://github.com/oklog/oklog/releases): 
+```
+oklog query -store <store> -from 1h -q "e"
+```
+
 ### Stream
 
 Quick stream:
@@ -73,7 +79,7 @@ Since v0.2.0 (currently unstable) you can register a steamed query to OK Log pro
 Users can register a query via a long-lived HTTP/1.1 connection to an OK Log container running in store or injeststore modes, e.g.:
 
 ```
-curl -iv localhost:7650/store/stream?q=e
+curl -iv <store>:7650/store/stream?q=e
 ```
 
 Alternatively, you can run a OK Log container in stream mode:
