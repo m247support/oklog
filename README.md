@@ -12,7 +12,7 @@ Tag, version, base image, Dockerfile link:
 -	[`v0.1.3`, `v0.1.3`, `alpine:3.5` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
 -	[`v0.1.2`, `v0.1.2`, `alpine:3.5` (*v0.1.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.2/Dockerfile)
 
-(Note that the latest denotes the most recent stable release, not the most latest release of OK Log.)
+(Note that the latest denotes the most recent stable release, not the most recent release of OK Log.)
 
 (Original Dockerfile modified from [lendico/oklog](https://hub.docker.com/r/lendico/oklog). All credits to [lendico-seong](https://github.com/lendico-seong). See notes for change requests.)
 
