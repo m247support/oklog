@@ -26,13 +26,13 @@ docker run -d \
 	-p 7651:7651 \
 	-p 7653:7653 \
 	-p 7659:7659 \
-	--name oklog \
+	--name oklog_ingest_store \
 	oklog/oklog:latest ingeststore -store.segment-replication-factor 1
 ```
 
 (To mount the data directory please use `-v /path/to/dir:/data`).
 
-Please see the OK Log [README.md](https://github.com/oklog/oklog/blob/master/README.md) for more advanced deployments.
+Please see the OK Log [README.md](https://github.com/oklog/oklog/blob/master/README.md) for more advanced and useful deployments.
 
 ## Forward logs
 
@@ -42,7 +42,7 @@ Quickly forward logs (requires a binary exectuable from the [releases](https://g
 tail -f /var/log/*.log | oklog forward <store/ingeststore>
 ```
 
-(Since v0.1.3 (latest) you can use `-prefix <tag> -prefix <label>` repeatable flag to prepend annotations to logs.)
+(Since v0.1.3 (latest) you can use the `-prefix <tag> -prefix <label>` repeatable flag to prepend annotations to logs.)
 
 ### Integrations
 
@@ -66,14 +66,14 @@ docker exec -it oklog /bin/ash
 ./oklog query -stats
 ./oklog query -from 2h -q "e"
 ```
-Or you can query a store with binary executable from [releases](https://github.com/oklog/oklog/releases): 
+Or you can query a store or ingeststore with binary from [releases](https://github.com/oklog/oklog/releases): 
 ```
 oklog query -store <store/ingeststore> -from 1h -q "e"
 ```
 
 ### Stream
 
-Since v0.2.0 (unstable) you can register a steamed query via a long-lived HTTP/1.1 connection to an OK Log container running in store or injeststore modes:
+Since v0.2.0 (unstable) you can register a steamed query via a long-lived HTTP/1.1 connection to a OK Log process running in store or ingeststore modes:
 
 ```
 curl -iv <store/ingeststore>:7650/store/stream?q=e
@@ -92,7 +92,7 @@ Please see [PR #34](https://github.com/oklog/oklog/pull/34) for more information
 ### UI
 
 
-Since v0.2.1 you can view a prototype web UI at `http://<store/injeststore>:7650/ui/`.
+Since v0.2.1 you can view a prototype web UI at `http://<store/ingeststore>:7650/ui/`.
 
 # Notes
 
