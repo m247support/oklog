@@ -39,7 +39,7 @@ Please see the OK Log [README.md](https://github.com/oklog/oklog/blob/master/REA
 Quickly forward logs (requires a binary exectuable from the [releases](https://github.com/oklog/oklog/releases)):
 
 ```
-tail -f /var/log/*.log | oklog forward <store/ingeststore>
+tail -f /var/log/*.log | oklog forward tcp://<store/ingeststore>:7651
 ```
 
 (Since v0.1.3 (latest) you can use the `-prefix <tag> -prefix <label>` repeatable flag to prepend annotations to logs.)
@@ -66,9 +66,9 @@ docker exec -it oklog /bin/ash
 ./oklog query -stats
 ./oklog query -from 2h -q "e"
 ```
-Or you can query a store or ingeststore with binary from [releases](https://github.com/oklog/oklog/releases): 
+Or you can query a store or ingeststore with binary from [releases](https://github.com/oklog/oklog/releases):
 ```
-oklog query -store <store/ingeststore> -from 1h -q "e"
+oklog query -store tcp://<store/ingeststore>:7650 -from 1h -q "e"
 ```
 
 ### Stream
@@ -79,7 +79,7 @@ Since v0.2.0 (unstable) you can register a steamed query via a long-lived HTTP/1
 curl -iv <store/ingeststore>:7650/store/stream?q=e
 ```
 
-Or you can stream with binary executable from [releases](https://github.com/oklog/oklog/releases): 
+Or you can stream with binary executable from [releases](https://github.com/oklog/oklog/releases):
 
 ```
 oklog stream -store <store/ingeststore>:7650 -from 1h -q "e"
@@ -98,4 +98,4 @@ Since v0.2.1 you can view a prototype web UI at `http://<store/ingeststore>:7650
 
 This represents a set of unofficial Dockerfiles and images containing the OK Log binary. All credits for OK Log should go to [peterbourgon](https://github.com/peterbourgon) and the OK Log contributors / maintainers.
 
-Any problems with OK Log then please raise an issue [here](https://github.com/oklog/oklog/issues/new). Any suggestions or enhancements to do with the Dockerfiles or images, please raise a new issue [here](https://github.com/m247suppport/oklog/issues/new). Alternatively, alterations or additions can be included in a new PR [here](https://github.com/m247suppport/oklog/pulls). All feedback is welcome.
+If you have any problems with OK Log, then please raise an issue [here](https://github.com/oklog/oklog/issues/new). Any suggestions or enhancements to do with the Dockerfiles or images, then please raise a new issue [here](https://github.com/m247suppport/oklog/issues/new). Alternatively, alterations or additions can be included in a new PR [here](https://github.com/m247suppport/oklog/pulls). All feedback is welcome.
