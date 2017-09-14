@@ -10,5 +10,5 @@ ADD https://github.com/oklog/oklog/releases/download/v0.2.1/oklog-0.2.1-linux-am
 RUN ["chmod", "775", "/oklog"]
 
 LABEL vendor=https://github.com/oklog/oklog \
-	oklog.version=0.2.1 \
+	oklog.version=v0.2.1-linux-amd64 \
 	oklog.release-date=2017-04-06

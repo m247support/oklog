@@ -6,14 +6,15 @@
 
 Tag, version, base image, Dockerfile link:
 
--	[`v0.2.2`, `v0.2.2`, `alpine:3.6` (*v0.2.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.2/Dockerfile)
--	[`v0.2.1`, `v0.2.1`, `alpine:3.6` (*v0.2.1/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.1/Dockerfile)
--	[`v0.2.0`, `v0.2.0`, `alpine:3.6` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
--	[`latest`, `v0.1.3`, `alpine:3.6` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
--	[`v0.1.3`, `v0.1.3`, `alpine:3.6` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
--	[`v0.1.2`, `v0.1.2`, `alpine:3.6` (*v0.1.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.2/Dockerfile)
+-	[`latest`, `v0.2.2-linux-amd64`, `alpine:3.6` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
+-	[`v0.2.2`, `v0.2.2-linux-amd64`, `alpine:3.6` (*v0.2.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.2/Dockerfile)
+-	[`v0.2.2arm64`, `v0.2.2-linux-arm64`, `arm64v8/alpine:3.6` (*v0.2.2arm64/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.2arm64/Dockerfile)
+-	[`v0.2.1`, `v0.2.1-linux-amd64`, `alpine:3.6` (*v0.2.1/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.1/Dockerfile)
+-	[`v0.2.0`, `v0.2.0-linux-amd64`, `alpine:3.6` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
+-	[`v0.1.3`, `v0.1.3-linux-amd64`, `alpine:3.6` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
+-	[`v0.1.2`, `v0.1.2-linux-amd64`, `alpine:3.6` (*v0.1.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.2/Dockerfile)
 
-(Note that the latest denotes the most recent stable release, not the most recent release of OK Log.)
+(Note that the latest denotes the most recent stable release, not necessarily the most recent release of OK Log.)
 
 (Original Dockerfile modified from [lendico/oklog](https://hub.docker.com/r/lendico/oklog). All credits to [lendico-seong](https://github.com/lendico-seong). See notes for change requests.)
 
@@ -74,7 +75,7 @@ oklog query -store tcp://<store/ingeststore>:7650 -from 1h -q "e"
 
 ### Stream
 
-Since v0.2.0 (unstable) you can register a steamed query via a long-lived HTTP/1.1 connection to a OK Log process running in store or ingeststore modes:
+Since v0.2.0 you can register a steamed query via a long-lived HTTP/1.1 connection to a OK Log process running in store or ingeststore modes:
 
 ```
 curl -iv <store/ingeststore>:7650/store/stream?q=e
@@ -92,8 +93,11 @@ Please see [PR #34](https://github.com/oklog/oklog/pull/34) for more information
 
 ### UI
 
-
 Since v0.2.1 you can view a prototype web UI at `http://<store/ingeststore>:7650/ui/`.
+
+### ARM64
+
+Since v0.2.2 an experimental arm64v8 image is available (oklog/oklog:v0.2.2arm64v8). This is built from the [semi-official](https://github.com/docker-library/official-images#architectures-other-than-amd64) [arm64v8/alpine:3.6](https://hub.docker.com/r/arm64v8/alpine) base image. Please use with caution.
 
 # Notes
 
