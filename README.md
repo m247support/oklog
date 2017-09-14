@@ -8,7 +8,6 @@ Tag, version, base image, Dockerfile link:
 
 -	[`latest`, `v0.2.2-linux-amd64`, `alpine:3.6` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
 -	[`v0.2.2`, `v0.2.2-linux-amd64`, `alpine:3.6` (*v0.2.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.2/Dockerfile)
--	[`v0.2.2arm64`, `v0.2.2-linux-arm64`, `arm64v8/alpine:3.6` (*v0.2.2arm64/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.2arm64/Dockerfile)
 -	[`v0.2.1`, `v0.2.1-linux-amd64`, `alpine:3.6` (*v0.2.1/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.1/Dockerfile)
 -	[`v0.2.0`, `v0.2.0-linux-amd64`, `alpine:3.6` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
 -	[`v0.1.3`, `v0.1.3-linux-amd64`, `alpine:3.6` (*v0.1.3/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.1.3/Dockerfile)
@@ -94,10 +93,6 @@ Please see [PR #34](https://github.com/oklog/oklog/pull/34) for more information
 ### UI
 
 Since v0.2.1 you can view a prototype web UI at `http://<store/ingeststore>:7650/ui/`.
-
-### ARM64
-
-Since v0.2.2 an experimental arm64v8 image is available (oklog/oklog:v0.2.2arm64v8). This is built from the [semi-official](https://github.com/docker-library/official-images#architectures-other-than-amd64) [arm64v8/alpine:3.6](https://hub.docker.com/r/arm64v8/alpine) base image. Please use with caution.
 
 # Notes
 
