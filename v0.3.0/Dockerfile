@@ -6,9 +6,9 @@ EXPOSE 7659 7651 7653 7650
 
 RUN mkdir /data
 
-ADD https://github.com/oklog/oklog/releases/download/v0.2.1/oklog-0.2.1-linux-amd64 /oklog
+ADD https://github.com/oklog/oklog/releases/download/v0.3.0/oklog-0.3.0-linux-amd64 /oklog
 RUN ["chmod", "775", "/oklog"]
 
 LABEL vendor=https://github.com/oklog/oklog \
-	oklog.version=v0.2.1-linux-amd64 \
-	oklog.release-date=2017-04-06
+	oklog.version=v0.3.0-linux-amd64 \
+	oklog.release-date=2017-12-03
