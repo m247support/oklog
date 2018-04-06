@@ -7,8 +7,10 @@
 Tag, version, base image, Dockerfile link:
 
 
+-	[`v0.3.2`, `v0.3.2-linux-amd64`, `alpine:3.7` (*v0.3.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.3.2/Dockerfile)
+-	[`latest`, `v0.3.2-linux-amd64`, `alpine:3.7` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
+-	[`v0.3.1`, `v0.3.1-linux-amd64`, `alpine:3.7` (*v0.3.1/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.3.1/Dockerfile)
 -	[`v0.3.0`, `v0.3.0-linux-amd64`, `alpine:3.7` (*v0.3.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.3.0/Dockerfile)
--	[`latest`, `v0.2.2-linux-amd64`, `alpine:3.7` (*Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/Dockerfile)
 -	[`v0.2.2`, `v0.2.2-linux-amd64`, `alpine:3.7` (*v0.2.2/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.2/Dockerfile)
 -	[`v0.2.1`, `v0.2.1-linux-amd64`, `alpine:3.7` (*v0.2.1/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.1/Dockerfile)
 -	[`v0.2.0`, `v0.2.0-linux-amd64`, `alpine:3.7` (*v0.2.0/Dockerfile*)](https://github.com/m247suppport/oklog/blob/master/v0.2.0/Dockerfile)
